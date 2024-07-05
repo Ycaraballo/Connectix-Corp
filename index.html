@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connectix Corp</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <img src="icononly.png" alt="Logo" class="logo">
+        <h1>Connectix Corp</h1>
+        <input type="file" id="upload" />
+        <select id="configSelector">
+            <option value="PC-460">PC-460</option>
+            <option value="PC-600">PC-600</option>
+        </select>
+        <button onclick="processExcel()">Process</button>
+        <button id="downloadButton" style="display:none;" onclick="downloadProcessedFile()">Download</button>
+    </div>
+    
+    <table id="dataTable" border="1">
+        <thead id="tableHead"></thead>
+        <tbody id="tableBody"></tbody>
+    </table>
+
+    <div class="footer">
+        <div class="footer-box">
+            <h3>Gross</h3>
+            <p id="sumRate">$0.00</p>
+        </div>
+        <div class="footer-box">
+            <h3>Paid</h3>
+            <p id="sumTotal">$0.00</p>
+        </div>
+        <div class="footer-box">
+            <h3>Profit</h3>
+            <p id="difference">$0.00</p>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.2/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
