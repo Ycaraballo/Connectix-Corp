@@ -29,11 +29,23 @@ function processExcel() {
 
         let processedData;
         
-        if (config === 'PC-460') {
-            processedData = processPC460(jsonData);
-        } else {
-            processedData = processPC430And600(jsonData);
-        }
+     if (config === 'PC-460') {
+    processedData = processPC460(jsonData);
+} else if (config === 'PC-430' || config === 'PC-600' || config === 'PC-707') {
+    processedData = processPC430And600(jsonData);
+} else {
+    alert("Invalid configuration selected.");
+    return;
+}
+
+
+
+      //  if (config === 'PC-460') {
+      //      processedData = processPC460(jsonData);
+      //  } else {
+      //      processedData = processPC430And600(jsonData);
+      //  }
+   
 
         console.log('Processed data:', processedData);
 
